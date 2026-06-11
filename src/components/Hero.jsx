@@ -5,20 +5,18 @@ import WordsPullUp from './WordsPullUp'
 export default function Hero() {
   return (
     <section className="hero" id="hero">
-      {/* Fallback Background */}
-      <div className="hero-fallback" />
-
-      {/* Video Background */}
-      <video
-        className="hero-video"
-        autoPlay
-        loop
-        muted
-        playsInline
-        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Crect fill='%230a0a0a' width='1920' height='1080'/%3E%3C/svg%3E"
-      >
-        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4" type="video/mp4" />
-      </video>
+      {/* Pure CSS Background - no external video */}
+      <div className="hero-bg">
+        <div className="hero-bg-gradient" />
+        <div className="hero-bg-particles">
+          <span className="particle p1" />
+          <span className="particle p2" />
+          <span className="particle p3" />
+          <span className="particle p4" />
+          <span className="particle p5" />
+          <span className="particle p6" />
+        </div>
+      </div>
 
       {/* Noise Overlay */}
       <div className="noise-overlay" style={{ opacity: 0.7, mixBlendMode: 'overlay' }} />

@@ -77,18 +77,53 @@
   }
 }
 
-.hero-video {
+/* Hero pure CSS background */
+.hero-bg {
   position: absolute;
   inset: 24px;
-  width: calc(100% - 48px);
-  height: calc(100% - 48px);
-  object-fit: cover;
   border-radius: 16px;
+  overflow: hidden;
   z-index: 1;
+  background: #060605;
+}
+
+.hero-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 30% 20%, rgba(222,219,200,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 70% at 70% 60%, rgba(180,175,150,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at 50% 80%, rgba(222,219,200,0.03) 0%, transparent 50%);
+}
+
+.hero-bg-particles {
+  position: absolute;
+  inset: 0;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(222,219,200,0.04);
+  animation: floatParticle 20s infinite ease-in-out;
+}
+
+.p1 { width: 2px; height: 2px; top: 15%; left: 25%; animation-delay: 0s; animation-duration: 18s; }
+.p2 { width: 3px; height: 3px; top: 45%; left: 65%; animation-delay: -3s; animation-duration: 22s; }
+.p3 { width: 1px; height: 1px; top: 70%; left: 40%; animation-delay: -7s; animation-duration: 16s; }
+.p4 { width: 2px; height: 2px; top: 25%; left: 80%; animation-delay: -11s; animation-duration: 20s; }
+.p5 { width: 1px; height: 1px; top: 60%; left: 10%; animation-delay: -15s; animation-duration: 24s; }
+.p6 { width: 3px; height: 3px; top: 35%; left: 50%; animation-delay: -5s; animation-duration: 19s; }
+
+@keyframes floatParticle {
+  0%, 100% { transform: translate(0, 0); opacity: 0.3; }
+  25% { transform: translate(40px, -30px); opacity: 0.7; }
+  50% { transform: translate(-20px, -60px); opacity: 0.4; }
+  75% { transform: translate(-50px, -20px); opacity: 0.6; }
 }
 
 @media (min-width: 768px) {
-  .hero-video {
+  .hero-bg {
     border-radius: 32px;
   }
 }
@@ -646,7 +681,7 @@
   .hero {
     padding: 12px;
   }
-  .hero-video {
+  .hero-bg {
     inset: 12px;
     width: calc(100% - 24px);
     height: calc(100% - 24px);
@@ -664,3 +699,4 @@
     padding: 32px 20px;
   }
 }
+
